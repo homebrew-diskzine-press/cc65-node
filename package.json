@@ -1,6 +1,6 @@
 {
   "name": "@homebrew-diskzine-press/cc65-node",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node interface to the cc65 compiler.",
   "main": "index.js",
   "repository": "https://github.com/homebrew-diskzine-press/cc65-node",
