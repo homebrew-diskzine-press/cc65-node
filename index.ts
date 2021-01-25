@@ -185,7 +185,7 @@ export function ca65(options: AssemblerOptions, filename: string) {
   return exec_p(cmd);
 }
 
-export function cl65(options: LinkerOptions, ...filenames: string[]) {
+export function ld65(options: LinkerOptions, ...filenames: string[]) {
   const { define = [], forceImport = [], libPaths = [], libs = [], objs = [], objPaths = [], ...rest } = options;
   const parameters = [
     ...Object.entries(rest)
@@ -203,7 +203,7 @@ export function cl65(options: LinkerOptions, ...filenames: string[]) {
     ...objs.map(f => ['--obj', f]),
     ...filenames.map(v => [v]),
   ];
-  const cmd = 'cl65 ' + parameters.map(v => v.join(' ')).join(' ');
+  const cmd = 'ld65 ' + parameters.map(v => v.join(' ')).join(' ');
   return exec_p(cmd);
 }
 
