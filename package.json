@@ -1,6 +1,6 @@
 {
   "name": "cc65-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node interface to the cc65 compiler.",
   "main": "index.js",
   "repository": "https://github.com/homebrew-diskzine-press/cc65-node",
@@ -20,8 +20,5 @@
   },
   "dependencies": {
     "@types/node": "^14.14.22"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
