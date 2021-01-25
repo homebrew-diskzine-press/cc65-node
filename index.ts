@@ -154,6 +154,7 @@ export function cc65(options: CompilerOptions, filename: string) {
     .filter(([_, b]) => (b !== false && b !== null && b !== undefined))
     .map(([a, b]): [string] | [string, string] => {
       a = '--' + a.replace(/[A-Z]/g, v => '-' + v.toLowerCase());
+      if (a === '--output-file') a = '-o';
       if (b === true) return [a];
       return [a, `${b}`];
     }),
@@ -173,6 +174,7 @@ export function ca65(options: AssemblerOptions, filename: string) {
     .filter(([_, b]) => (b !== false && b !== null && b !== undefined))
     .map(([a, b]): [string] | [string, string] => {
       a = '--' + a.replace(/[A-Z]/g, v => '-' + v.toLowerCase());
+      if (a === '--output-file') a = '-o';
       if (b === true) return [a];
       return [a, `${b}`];
     }),
@@ -192,6 +194,7 @@ export function ld65(options: LinkerOptions, ...filenames: string[]) {
     .filter(([_, b]) => (b !== false && b !== null && b !== undefined))
     .map(([a, b]): [string] | [string, string] => {
       a = '--' + a.replace(/[A-Z]/g, v => '-' + v.toLowerCase());
+      if (a === '--output-file') a = '-o';
       if (b === true) return [a];
       return [a, `${b}`];
     }),
@@ -213,6 +216,7 @@ export function co65(options: ObjectToolOptions, filename: string) {
     .filter(([_, b]) => (b !== false && b !== null && b !== undefined))
     .map(([a, b]): [string] | [string, string] => {
       a = '--' + a.replace(/[A-Z]/g, v => '-' + v.toLowerCase());
+      if (a === '--output-file') a = '-o';
       if (b === true) return [a];
       return [a, `${b}`];
     }),
